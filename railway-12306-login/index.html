@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国铁路12306 - 用户登录</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="assets/logo.svg" alt="中国铁路12306" class="logo">
+                <h1 class="site-title">中国铁路12306</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">首页</a>
+                <a href="#" class="nav-link">购票</a>
+                <a href="#" class="nav-link">订单</a>
+                <a href="#" class="nav-link">客服</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <div class="container">
+            <div class="login-wrapper">
+                <!-- 左侧登录表单 -->
+                <div class="login-form-section">
+                    <div class="login-header">
+                        <h2>用户登录</h2>
+                        <div class="login-tabs">
+                            <button class="tab-btn active" data-tab="account">账号登录</button>
+                            <button class="tab-btn" data-tab="phone">手机登录</button>
+                        </div>
+                    </div>
+
+                    <!-- 账号登录表单 -->
+                    <form class="login-form" id="accountForm">
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input type="text" id="username" name="username" placeholder="请输入用户名/手机号/邮箱" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                            <button type="button" class="password-toggle" id="passwordToggle">
+                                <span class="eye-icon">👁</span>
+                            </button>
+                        </div>
+
+                        <div class="form-group captcha-group">
+                            <label for="captcha">验证码</label>
+                            <div class="captcha-wrapper">
+                                <input type="text" id="captcha" name="captcha" placeholder="请输入验证码" required>
+                                <canvas class="captcha-canvas" id="captchaCanvas" width="120" height="40"></canvas>
+                                <button type="button" class="refresh-captcha" id="refreshCaptcha">刷新</button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                记住用户名
+                            </label>
+                            <a href="#" class="forgot-password">忘记密码？</a>
+                        </div>
+
+                        <button type="submit" class="login-btn">登录</button>
+                        
+                        <div class="register-link">
+                            还没有账号？<a href="#">立即注册</a>
+                        </div>
+                    </form>
+
+                    <!-- 手机登录表单 -->
+                    <form class="login-form hidden" id="phoneForm">
+                        <div class="form-group">
+                            <label for="phoneNumber">手机号</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="请输入手机号" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="smsCode">短信验证码</label>
+                            <div class="sms-wrapper">
+                                <input type="text" id="smsCode" name="smsCode" placeholder="请输入短信验证码" required>
+                                <button type="button" class="send-sms-btn" id="sendSmsBtn">发送验证码</button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="login-btn">登录</button>
+                    </form>
+                </div>
+
+                <!-- 右侧信息区域 -->
+                <div class="info-section">
+                    <div class="qr-login">
+                        <h3>扫码登录</h3>
+                        <div class="qr-code">
+                            <canvas id="qrCanvas" width="200" height="200"></canvas>
+                        </div>
+                        <p class="qr-tip">使用铁路12306手机APP扫码登录</p>
+                    </div>
+
+                    <div class="notice-section">
+                        <h4>温馨提示</h4>
+                        <ul class="notice-list">
+                            <li>为了您的账户安全，请在公共场所谨慎登录</li>
+                            <li>登录遇到问题？请拨打客服电话：12306</li>
+                            <li>建议使用Chrome、Firefox等现代浏览器</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">关于我们</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">法律声明</a>
+                    <a href="#">隐私政策</a>
+                    <a href="#">网站地图</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2024 中国铁路客户服务中心 版权所有</p>
+                    <p>建议分辨率1024*768 IE9.0以上浏览器</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
